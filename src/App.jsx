@@ -16,17 +16,50 @@ import {
 } from "@mui/material";
 import { Camera } from '@mui/icons-material';
 
+import photoCards from "./data/photoCards.json";
+
 const styles = css`
   .button {
     background-color: #000000;
+
+    &--small {
+      color: black;
+      border-color: #afafaf;
+    }
 
     &:hover {
       background-color: #1b1b1b;
     }
   }
+
+  .cardGrid {
+    margin-top: 50px;
+    padding: 20px 10px;
+  }
+
+  .card {
+
+  }
+
+  .cardMedia {
+    padding-top: 56.25%;//16:9
+  }
+
+  .cardContent {
+
+  }
+
+  .footer {
+    height: 300px;
+    background-color: black;
+    padding: 30px 10px;
+    color: white; 
+  }
 `
 
 export default function App() {
+
+  const { cards } = photoCards;
 
   return (
     <div css={styles}>
@@ -62,9 +95,43 @@ export default function App() {
             </div>
           </Container>
         </div>
+        <div>
+          <Container maxWidth="md" className="cardGrid">
+            <Grid container spacing={4} justifyContent="left">
+              {cards.map((card, i) => (
+                <Grid item key={i} xs={12} sm={6} md={4}>
+                  <Card className="card">
+                    <CardMedia 
+                      className="cardMedia"
+                      image={card.image}
+                      title="Fashion shots"
+                    />
+                    <CardContent className="cardContent">
+                      <Typography variant="h5" gutterBottom>
+                        {card.heading}
+                      </Typography>
+                      <Typography>
+                        {card.content}
+                      </Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Button variant="outlined" size="small" className="button--small">View</Button>
+                      <Button variant="outlined" size="small" className="button--small">Edit</Button>
+                    </CardActions>
+                  </Card>
+                </Grid>
+                ))}
+            </Grid>
+          </Container>
+        </div>
       </main>
-      <footer>
-
+      <footer className="footer">
+                <Typography variant="h6" align="center" gutterBottom>
+                  Footer
+                </Typography>
+                <Typography variant="subtitle2" align="center" sx={{color: "grey"}}>
+                  Lorem
+                </Typography>
       </footer>
     </div>
   )

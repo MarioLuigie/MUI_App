@@ -1,0 +1,24 @@
+{
+  "cards": [
+    {
+      "image": "https://source.unsplash.com/random",
+      "heading": "Unity Center",
+      "content": "Use this space for add your message 1."
+    },
+    {
+      "image": "https://source.unsplash.com/random",
+      "heading": "Beach",
+      "content": "Use this space for add your message 2."
+    },
+    {
+      "image": "https://source.unsplash.com/random",
+      "heading": "Slavia City",
+      "content": "Use this space for add your message 3."
+    },
+    {
+      "image": "https://source.unsplash.com/random",
+      "heading": "Dance",
+      "content": "Use this space for add your message 4."
+    }
+  ]
+}
